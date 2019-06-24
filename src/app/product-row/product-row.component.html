@@ -1,0 +1,8 @@
+<product-image [product]="product"></product-image>
+<div class="content">
+  <div class="header">{{ product.name }}</div>
+  <div class="description">
+    <product-department [product]="product"></product-department>
+  </div>
+</div>
+<price-display [price]="product.price"></price-display>
