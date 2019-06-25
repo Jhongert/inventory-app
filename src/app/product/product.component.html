@@ -1,0 +1,26 @@
+
+<div>
+   <h2>Demo form</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+
+      <div class="form-group">
+        <label for="skuInput">SKU</label>
+        <input type="text"
+          class="form-control"
+          [ngClass]="{'is-invalid': submitted && f.sku.errors}"
+          id="skuInput"
+          placeholder="SKU"
+          formControlName="sku"
+        >
+        <div *ngIf="submitted && f.sku.errors" class="invalid-feedback">
+            <div class="text-center " *ngIf="f.sku.hasError('required')">SKU is invalid</div>
+        </div>
+        
+
+      </div>
+      <button type="submit">Submit</button>
+
+    </form>
+    <div class="text-center invalid-feedback" >required</div>
+
+</div>
